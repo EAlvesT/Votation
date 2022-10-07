@@ -1,0 +1,44 @@
+nulo, branco, samuca, neto, baltazar=0, 0, 0, 0 ,0
+print('''
+Digite seu voto a seguir:
+-1 - sair
+0 - branco
+1 - Samuca
+2 - Neto
+3 - Baltazar
+>=4 - Nulo
+''')
+while True:
+    voto=int(input())
+    if voto == -1:
+        break
+    if voto <= -2:
+        print('Voto inválido!')
+    if voto == 0:
+        branco+=1
+    if voto == 1:
+        samuca+=1
+    if voto == 2:
+        neto+=1
+    if voto == 3:
+        baltazar+=1
+    if voto >= 4:
+        nulo+=1
+eleitores = branco + nulo + samuca + neto + baltazar
+if samuca > neto and samuca > baltazar:
+    print(f'Samuca vence por {samuca} votos!')
+elif neto > samuca and neto > baltazar:
+    print(f'Neto vence por {neto} votos!')
+elif baltazar > samuca and baltazar > neto:
+    print(f'Baltazar vence por {baltazar} votos!')
+elif samuca > neto and samuca == baltazar:
+    print(f'Samuca empata com Baltazar por {samuca} votos!')
+elif samuca > baltazar and samuca == neto:
+    print(f'Samuca empata com Neto por {samuca} votos!')
+elif baltazar > samuca and baltazar == neto:
+    print(f'Baltazar empata com Neto por {baltazar} votos!')
+elif samuca==neto==baltazar:
+    print(f'Houve empate entre os candidatos por {samuca} votos!')
+print(f'A quantidade de votos em branco foram de {branco} votos!')
+print(f'A quantidade de votos nulos foram de {nulo} votos!')
+print(f'Um total de {eleitores} eleitores votaram!')
